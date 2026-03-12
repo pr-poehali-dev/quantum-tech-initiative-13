@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "GET - список замеров CO2",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST - добавить замер CO2",
+      "method": "POST",
+      "path": "/",
+      "body": {"value": 412.5, "unit": "ppm", "location": "Офис 1", "sensor_id": "sensor-001"},
+      "expectedStatus": 201
+    },
+    {
+      "name": "POST - ошибка без value",
+      "method": "POST",
+      "path": "/",
+      "body": {"unit": "ppm"},
+      "expectedStatus": 400
+    }
+  ]
+}
